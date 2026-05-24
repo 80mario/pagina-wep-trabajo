@@ -1,0 +1,21 @@
+{
+  "name": "mario-sanchez-web",
+  "version": "1.0.0",
+  "description": "Aplicacion web para Mario Sanchez, telecomunicaciones, fibra optica y electricidad.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "fibra-optica",
+    "telecomunicaciones",
+    "electricidad",
+    "railway"
+  ],
+  "author": "Mario Sanchez",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  }
+}
