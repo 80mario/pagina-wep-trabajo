@@ -7,9 +7,10 @@
     <meta name="description" content="Contacta con Mario Sanchez por WhatsApp, telefono o formulario para instalaciones de fibra optica, telecomunicaciones y electricidad.">
     <link rel="canonical" href="/contacto.html">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/config.js" defer></script>
     <script src="assets/js/app.js" defer></script>
   </head>
-  <body data-page="contacto" data-whatsapp-phone="34000000000" data-whatsapp-message="Hola Mario, quiero pedir presupuesto para una instalacion.">
+  <body data-page="contacto">
     <header class="header">
       <a class="logo" href="index.html"><span class="logo-mark">MS</span><span>Mario S&aacute;nchez</span></a>
       <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -30,12 +31,12 @@
           <p>Si prefieres dejar todos los datos ordenados, el formulario sigue disponible y guarda la solicitud en la app.</p>
           <div class="contact-actions">
             <a class="btn" href="#" data-whatsapp>Escribir por WhatsApp</a>
-            <a class="btn secondary dark" href="tel:000000000">Llamar</a>
+            <a class="btn secondary dark" href="tel:000000000" data-phone-link>Llamar</a>
           </div>
           <div class="contact-card">
-            <div class="contact-row"><span>Tel&eacute;fono</span><strong>000 000 000</strong></div>
-            <div class="contact-row"><span>Email</span><strong>info@mariosanchez.es</strong></div>
-            <div class="contact-row"><span>Zona</span><strong>Zona editable</strong></div>
+            <div class="contact-row"><span>Tel&eacute;fono</span><strong data-phone-display>000 000 000</strong></div>
+            <div class="contact-row"><span>Email</span><strong data-email-display>info@mariosanchez.es</strong></div>
+            <div class="contact-row"><span>Zona</span><strong data-area-display>Zona editable</strong></div>
             <div class="contact-row"><span>Horario</span><strong>Lunes a viernes</strong></div>
           </div>
         </div>
@@ -57,6 +58,10 @@
             Email
             <input name="email" type="email" autocomplete="email" placeholder="Opcional">
           </label>
+          <label class="hp-field" aria-hidden="true">
+            Web
+            <input name="website" tabindex="-1" autocomplete="off">
+          </label>
           <label>
             Servicio
             <select name="service">
@@ -71,6 +76,7 @@
             <textarea name="message" rows="5" required placeholder="Ejemplo: necesito llevar fibra a otra habitacion, revisar un cuadro o montar puntos de red"></textarea>
           </label>
           <button class="btn" type="submit">Enviar solicitud</button>
+          <p class="privacy-note">Al enviar el formulario aceptas que usemos tus datos solo para responder a esta solicitud. Para producci&oacute;n conviene conectar email, base de datos o webhook persistente.</p>
           <p class="form-status" data-form-status aria-live="polite"></p>
         </form>
       </section>

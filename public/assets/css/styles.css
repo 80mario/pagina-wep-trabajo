@@ -746,6 +746,20 @@ section {
   resize: vertical;
 }
 
+.hp-field {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.privacy-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
 .form-status {
   min-height: 24px;
   margin: 0;

@@ -7,6 +7,7 @@ const PORT = process.env.PORT || 4173;
 const PUBLIC_DIR = path.join(__dirname, "public");
 const DATA_DIR = path.join(__dirname, "data");
 const LEADS_FILE = path.join(DATA_DIR, "leads.json");
+const MAX_BODY_SIZE = 50_000;
 
 const MIME_TYPES = {
   ".html": "text/html; charset=utf-8",
@@ -35,18 +36,22 @@ async function readJsonBody(req) {
   let body = "";
   for await (const chunk of req) {
     body += chunk;
-    if (body.length > 1_000_000) {
+    if (body.length > MAX_BODY_SIZE) {
       throw new Error("Payload too large");
     }
   }
   return body ? JSON.parse(body) : {};
 }
 
-function clean(value) {
-  return String(value || "").trim().slice(0, 1000);
+function clean(value, maxLength = 1000) {
+  return String(value || "").trim().slice(0, maxLength);
 }
 
 async function saveLead(data) {
+  if (clean(data.website, 120)) {
+    return { ok: true, spam: true };
+  }
+
   await fsp.mkdir(DATA_DIR, { recursive: true });
 
   let leads = [];
@@ -59,11 +64,11 @@ async function saveLead(data) {
   const lead = {
     id: Date.now().toString(36),
     createdAt: new Date().toISOString(),
-    name: clean(data.name),
-    phone: clean(data.phone),
-    email: clean(data.email),
-    service: clean(data.service),
-    message: clean(data.message)
+    name: clean(data.name, 120),
+    phone: clean(data.phone, 40),
+    email: clean(data.email, 160),
+    service: clean(data.service, 80),
+    message: clean(data.message, 1200)
   };
 
   if (!lead.name || !lead.phone || !lead.message) {
