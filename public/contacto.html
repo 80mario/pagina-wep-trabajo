@@ -1,52 +1,61 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Contacto | Mario S&aacute;nchez</title>
-    <meta name="description" content="Contacta con Mario Sanchez para instalaciones de fibra optica, telecomunicaciones y electricidad.">
+    <title>Contacto y presupuesto por WhatsApp | Mario S&aacute;nchez</title>
+    <meta name="description" content="Contacta con Mario Sanchez por WhatsApp, telefono o formulario para instalaciones de fibra optica, telecomunicaciones y electricidad.">
+    <link rel="canonical" href="/contacto.html">
     <link rel="stylesheet" href="assets/css/styles.css">
     <script src="assets/js/app.js" defer></script>
   </head>
-  <body data-page="contacto">
+  <body data-page="contacto" data-whatsapp-phone="34000000000" data-whatsapp-message="Hola Mario, quiero pedir presupuesto para una instalacion.">
     <header class="header">
       <a class="logo" href="index.html"><span class="logo-mark">MS</span><span>Mario S&aacute;nchez</span></a>
-      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">Menu</button>
-      <nav class="nav" aria-label="Navegacion">
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="nav" aria-label="Navegacion principal">
         <a href="index.html" data-nav="inicio">Inicio</a>
         <a href="servicios.html" data-nav="servicios">Servicios</a>
         <a href="proyectos.html" data-nav="proyectos">Trabajos</a>
         <a href="contacto.html" data-nav="contacto">Contacto</a>
       </nav>
-      <a class="btn header-cta" href="#formulario">Pedir presupuesto</a>
+      <a class="btn header-cta" href="#" data-whatsapp>WhatsApp</a>
     </header>
 
     <main>
       <section class="contact-page">
         <div>
           <p class="eyebrow">Contacto</p>
-          <h1>Cu&eacute;ntanos qu&eacute; necesitas instalar o mejorar.</h1>
-          <p>Rellena el formulario y el proyecto guardar&aacute; la solicitud en local cuando est&eacute;s trabajando en tu ordenador. En Railway tambi&eacute;n quedar&aacute; listo para conectar con correo o base de datos.</p>
+          <h1>La forma m&aacute;s r&aacute;pida es WhatsApp: env&iacute;a foto y explicamos el siguiente paso.</h1>
+          <p>Si prefieres dejar todos los datos ordenados, el formulario sigue disponible y guarda la solicitud en la app.</p>
+          <div class="contact-actions">
+            <a class="btn" href="#" data-whatsapp>Escribir por WhatsApp</a>
+            <a class="btn secondary dark" href="tel:000000000">Llamar</a>
+          </div>
           <div class="contact-card">
             <div class="contact-row"><span>Tel&eacute;fono</span><strong>000 000 000</strong></div>
             <div class="contact-row"><span>Email</span><strong>info@mariosanchez.es</strong></div>
-            <div class="contact-row"><span>Zona</span><strong>Servicio local</strong></div>
+            <div class="contact-row"><span>Zona</span><strong>Zona editable</strong></div>
             <div class="contact-row"><span>Horario</span><strong>Lunes a viernes</strong></div>
           </div>
         </div>
 
         <form class="form" id="formulario" data-contact-form>
+          <div class="form-head">
+            <h2>Formulario de presupuesto</h2>
+            <p>Rellena lo esencial. Nombre, tel&eacute;fono y mensaje son obligatorios.</p>
+          </div>
           <label>
             Nombre
-            <input name="name" autocomplete="name" required>
+            <input name="name" autocomplete="name" required placeholder="Tu nombre">
           </label>
           <label>
             Tel&eacute;fono
-            <input name="phone" autocomplete="tel" required>
+            <input name="phone" autocomplete="tel" required placeholder="Tu telefono de contacto">
           </label>
           <label>
             Email
-            <input name="email" type="email" autocomplete="email">
+            <input name="email" type="email" autocomplete="email" placeholder="Opcional">
           </label>
           <label>
             Servicio
@@ -54,12 +63,12 @@
               <option>Fibra &oacute;ptica</option>
               <option>Telecomunicaciones</option>
               <option>Electricidad</option>
-              <option>Otro</option>
+              <option>No lo tengo claro</option>
             </select>
           </label>
           <label>
             Mensaje
-            <textarea name="message" rows="5" required placeholder="Describe brevemente lo que necesitas"></textarea>
+            <textarea name="message" rows="5" required placeholder="Ejemplo: necesito llevar fibra a otra habitacion, revisar un cuadro o montar puntos de red"></textarea>
           </label>
           <button class="btn" type="submit">Enviar solicitud</button>
           <p class="form-status" data-form-status aria-live="polite"></p>
@@ -67,10 +76,11 @@
       </section>
     </main>
 
+    <a class="floating-whatsapp" href="#" data-whatsapp aria-label="Contactar por WhatsApp">WhatsApp</a>
+
     <footer class="footer">
       <span>&copy; 2026 Mario S&aacute;nchez.</span>
       <span>Fibra, telecomunicaciones y electricidad.</span>
     </footer>
   </body>
 </html>
-

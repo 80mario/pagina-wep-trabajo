@@ -36,6 +36,11 @@ a {
   text-decoration: none;
 }
 
+:focus-visible {
+  outline: 3px solid rgba(245, 158, 11, 0.5);
+  outline-offset: 4px;
+}
+
 .header {
   position: sticky;
   top: 0;
@@ -88,7 +93,16 @@ a {
   border-radius: 8px;
   background: #fff;
   color: var(--ink);
-  font-size: 22px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  border-radius: 99px;
+  background: var(--ink);
 }
 
 .btn {
@@ -120,6 +134,12 @@ a {
   box-shadow: none;
 }
 
+.btn.secondary.dark {
+  background: rgba(15, 23, 42, 0.18);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.24);
+}
+
 .hero {
   min-height: 84vh;
   display: grid;
@@ -148,6 +168,27 @@ a {
 
 .hero-inner {
   width: min(760px, 100%);
+}
+
+.hero-premium h1 {
+  max-width: 840px;
+}
+
+.hero-proof {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 26px;
+}
+
+.hero-proof span {
+  padding: 9px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.82);
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 14px;
+  font-weight: 800;
 }
 
 .hero-card {
@@ -215,7 +256,8 @@ a {
 }
 
 .hero .eyebrow,
-.contact-page .eyebrow {
+.contact-page .eyebrow,
+.page-hero .eyebrow {
   color: #b9f1e9;
 }
 
@@ -380,6 +422,34 @@ section {
   color: var(--muted);
 }
 
+.detailed-services {
+  grid-template-columns: 1fr;
+}
+
+.detailed-services .detail-card {
+  min-height: 0;
+}
+
+.explain-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 22px;
+}
+
+.explain-grid div {
+  min-height: 190px;
+  padding: 20px;
+  border-radius: 8px;
+  background: var(--soft);
+}
+
+.explain-grid strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+
 .text-link {
   display: inline-flex;
   margin-top: 22px;
@@ -531,6 +601,25 @@ section {
   font-size: 23px;
 }
 
+.project-card dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 7px 12px;
+  margin: 18px 0 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.project-card dt {
+  color: var(--ink);
+  font-weight: 900;
+}
+
+.project-card dd {
+  margin: 0;
+  color: var(--muted);
+}
+
 .project-media {
   min-height: 210px;
   background:
@@ -558,6 +647,13 @@ section {
   background: rgba(255, 255, 255, 0.06);
 }
 
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
 .contact-row {
   display: flex;
   justify-content: space-between;
@@ -581,6 +677,17 @@ section {
   border-radius: 8px;
   background: #fff;
   color: var(--ink);
+}
+
+.form-head h2 {
+  margin-bottom: 8px;
+  font-size: 25px;
+}
+
+.form-head p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
 }
 
 .form label {
@@ -646,6 +753,23 @@ section {
   font-weight: 700;
 }
 
+.floating-whatsapp {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 20;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 16px;
+  border-radius: 8px;
+  color: #fff;
+  background: #128c7e;
+  box-shadow: 0 18px 38px rgba(18, 140, 126, 0.34);
+  font-weight: 900;
+}
+
 .footer {
   display: flex;
   justify-content: space-between;
@@ -671,6 +795,10 @@ section {
   .steps,
   .intro,
   .contact-page {
+    grid-template-columns: 1fr;
+  }
+
+  .explain-grid {
     grid-template-columns: 1fr;
   }
 
@@ -714,6 +842,10 @@ section {
     gap: 12px;
   }
 
+  .nav a {
+    padding: 10px 0;
+  }
+
   .hero {
     padding: 58px 18px 42px;
   }
@@ -724,8 +856,13 @@ section {
 
   .actions,
   .btn,
-  .cta-band {
+  .cta-band,
+  .contact-actions {
     width: 100%;
+  }
+
+  .contact-actions {
+    display: grid;
   }
 
   .hero-metrics {
@@ -742,5 +879,10 @@ section {
 
   .footer {
     display: grid;
+  }
+
+  .floating-whatsapp {
+    right: 14px;
+    bottom: 14px;
   }
 }
