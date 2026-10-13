@@ -47,23 +47,16 @@ document.querySelector("[data-contact-form]")?.addEventListener("submit", async 
     return;
   }
 
-  status.textContent = "Enviando solicitud. Un momento...";
+  const texto = [
+    "Hola Mario, te escribo desde la web.",
+    "Nombre: " + (data.name || ""),
+    "Telefono: " + (data.phone || ""),
+    data.email ? "Email: " + data.email : "",
+    "Servicio: " + (data.service || ""),
+    "Mensaje: " + (data.message || "")
+  ].filter(Boolean).join("\n");
 
-  try {
-    const response = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(data)
-    });
-    const result = await response.json();
-
-    if (!response.ok || !result.ok) {
-      throw new Error(result.error || "No se pudo enviar.");
-    }
-
-    form.reset();
-    status.textContent = "Solicitud enviada. Si quieres respuesta mas rapida, tambien puedes escribir por WhatsApp.";
-  } catch (error) {
-    status.textContent = "No se pudo enviar ahora. Revisa nombre, telefono y mensaje, o contacta por WhatsApp.";
-  }
+  window.open(`https://wa.me/${whatsappPhone}?text=${encodeURIComponent(texto)}`, "_blank", "noopener");
+  form.reset();
+  status.textContent = "Se ha abierto WhatsApp con tu solicitud. Solo tienes que pulsar Enviar.";
 });
