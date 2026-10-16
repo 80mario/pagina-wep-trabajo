@@ -4,6 +4,6 @@ window.MS_SITE_CONFIG = {
   phoneDisplay: "671 64 72 23",
   phoneHref: "tel:+34671647223",
   email: "instalacionesms@hotmail.com",
-  serviceArea: "Humanes y sur de Madrid",
+  serviceArea: "Comunidad de Madrid y toda España",
   businessStack: "Node estatico. Convex queda fuera de alcance en este proyecto."
 };
