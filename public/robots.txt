@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: /sitemap.xml
+Sitemap: https://80mario.github.io/pagina-wep-trabajo/public/sitemap.xml
